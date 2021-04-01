@@ -8,7 +8,7 @@ namespace ParksGamification.ViewModels
     {
         public WelcomeViewModel()
         {
-            Title = "Welcome";
+            Title = "Welcome to the application!";
             OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://www.google.com"));
         }
 
