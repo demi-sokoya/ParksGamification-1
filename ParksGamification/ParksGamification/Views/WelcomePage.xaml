@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ParksGamification.Views.WelcomePage"
+             xmlns:local="clr-namespace:ParksGamification.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <local:WelcomeViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Orientation="Vertical" Padding="30">
+        <Button Text="Learn more" Command="{Binding OpenWebCommand}"/>
+    </StackLayout>
+
+</ContentPage>
