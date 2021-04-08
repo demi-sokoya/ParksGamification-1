@@ -86,6 +86,10 @@
         <ShellContent Route="TestPage" ContentTemplate="{DataTemplate local:TestPage}" />
     </FlyoutItem>
 
+    <FlyoutItem Title="Parks" Icon="icon_feed.png">
+        <ShellContent Route="ParksListPage" ContentTemplate="{DataTemplate local:ParksListPage}" />
+    </FlyoutItem>
+
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
 
 

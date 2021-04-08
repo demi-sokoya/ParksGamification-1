@@ -11,6 +11,7 @@ namespace ParksGamification
             InitializeComponent();
 
             Routing.RegisterRoute(nameof(TestPage),typeof(TestPage));
+            Routing.RegisterRoute(nameof(ParksListPage), typeof(ParksListPage));
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)

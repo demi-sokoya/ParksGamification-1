@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using ParksGamification.Models;
+using ParksGamification.Services;
 using Xamarin.Forms;
 
 namespace ParksGamification.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        public IDataStore<Park> DataStore => DependencyService.Get<IDataStore<Park>>();
+
         bool isBusy = false;
         public bool IsBusy
         {
