@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:ParksGamification.ViewModels;assembly=ParksGamification"
              xmlns:models="clr-namespace:ParksGamification.Models;assembly=ParksGamification"
-             x:Class="ParksGamification.Views.ParksListPage">
+             x:Class="ParksGamification.Views.ParksListPage"
+             Title="{Binding Title}">
     <ContentPage.Content>
         <StackLayout Padding="30">
             <RefreshView x:DataType="viewModels:ParkListViewModel" Command="{Binding LoadParksCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
