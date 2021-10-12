@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:ParksGamification.ViewModels"
+             xmlns:models="clr-namespace:ParksGamification.Models"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="ParksGamification.Views.ParksPage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:ParksViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <xct:ItemSelectedEventArgsConverter x:Key="ItemSelectedEventArgsConverter"></xct:ItemSelectedEventArgsConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView
+                Background="Transparent"
+                CachingStrategy="RecycleElement"
+                ItemsSource="{Binding Parks}"
+                RowHeight="60"
+                SelectedItem="{Binding SelectedPark, Mode=TwoWay}">
+                <ListView.Behaviors>
+                    <xct:EventToCommandBehavior
+                        EventName="ItemSelected"
+                        Command="{Binding SelectedCommand}"
+                        EventArgsConverter="{StaticResource ItemSelectedEventArgsConverter}"></xct:EventToCommandBehavior>
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Park">
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Name}" TextColor="Black"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
