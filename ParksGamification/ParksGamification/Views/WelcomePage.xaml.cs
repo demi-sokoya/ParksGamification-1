@@ -1,6 +1,7 @@
 ﻿using ParksGamification.Services;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,19 @@ namespace ParksGamification.Views
             DeviceOrientation orientation = device.GetOrientation();
 
             Application.Current.MainPage.DisplayAlert("Orientation", orientation.ToString(), "OK");
+        }
+
+        async void OnPickPhotoClicked(object sender, EventArgs e)
+        {
+            (sender as Button).IsEnabled = false;
+
+            Stream stream = await DependencyService.Get<IPhotoPickerService>().GetImageStreamAsync();
+            if (stream != null)
+            {
+                image.Source = ImageSource.FromStream(() => stream);
+            }
+
+            (sender as Button).IsEnabled = true;
         }
     }
 }

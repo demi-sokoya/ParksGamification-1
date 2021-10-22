@@ -10,6 +10,11 @@
 
             <Button Text="Device Orientation"
                     Clicked="OnDeviceOrientationClicked" />
+
+            <Button Text="Pick Photo"
+                    Clicked="OnPickPhotoClicked" />
+
+            <Image x:Name="image" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
