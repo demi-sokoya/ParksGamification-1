@@ -78,12 +78,18 @@ namespace ParksGamification.Services
 
         public async Task UpdatePark(Park park)
         {
-            throw new NotImplementedException();
+            var parks = ReadFile();
+            parks[parks.FindIndex(p => p.Id == park.Id)] = park;
+
+            WriteFile(parks);
         }
 
         public async Task AddPark(Park park)
         {
-            throw new NotImplementedException();
+            var parks = ReadFile();
+            parks.Add(park);
+
+            WriteFile(parks);
         }
     }
 }
