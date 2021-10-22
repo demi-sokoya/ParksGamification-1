@@ -8,6 +8,9 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
 
+            <Button Text="Access API"
+                    Clicked="OnAccessAPIClicked" />
+            
             <Button Text="Device Orientation"
                     Clicked="OnDeviceOrientationClicked" />
 

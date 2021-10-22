@@ -20,6 +20,14 @@ namespace ParksGamification.Views
 
         }
 
+        async void OnAccessAPIClicked(object sender, EventArgs e)
+        {
+            var client = DependencyService.Get<IWebClientService>();
+            string content = await client.GetString("https://www.google.com");
+
+            Application.Current.MainPage.DisplayAlert("HTTP", content.ToString(), "OK");
+        }
+
         private void OnDeviceOrientationClicked(object sender, EventArgs e)
         {
             var device = DependencyService.Get<IDeviceOrientationService>();
