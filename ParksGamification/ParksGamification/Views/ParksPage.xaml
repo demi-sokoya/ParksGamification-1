@@ -17,7 +17,10 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <StackLayout>
+        <RefreshView
+             Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsBusy}">
+            <ScrollView>
+            <StackLayout>
             <ListView
                 Background="Transparent"
                 CachingStrategy="RecycleElement"
@@ -41,5 +44,7 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
+            </ScrollView>
+        </RefreshView>
     </ContentPage.Content>
 </ContentPage>
