@@ -8,5 +8,7 @@ namespace ParksGamification.Services
     {
         Task<IEnumerable<Park>> GetParks();
         Task<Park> GetPark(int parkId);
+        Task AddPark(Park park);
+        Task UpdatePark(Park park);
     }
 }

@@ -1,7 +1,6 @@
-﻿using ParksGamification.Models;
-using System;
+﻿using Azure.Storage.Blobs;
+using ParksGamification.Models;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Xamarin.CommunityToolkit.ObjectModel;
 using Xamarin.Forms;
@@ -36,8 +35,6 @@ namespace ParksGamification.ViewModels
 
         async Task Selected(Park park)
         {
-            //await Application.Current.MainPage.DisplayAlert("Selected", park.Name, "OK");
-
             string route = $"{nameof(Views.ParkDetailPage)}?ParkId={park.Id}";
             await Shell.Current.GoToAsync(route);
         }
