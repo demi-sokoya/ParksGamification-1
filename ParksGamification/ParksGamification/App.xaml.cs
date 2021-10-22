@@ -11,7 +11,8 @@ namespace ParksGamification
             InitializeComponent();
 
             //DependencyService.Register<ParkDataStoreLocalJson>();
-            DependencyService.Register<ParkDataStoreSQLite>();
+            //DependencyService.Register<ParkDataStoreSQLite>();
+            DependencyService.Register<ParkDataStoreAzureBlobStorageJson>();
 
             MainPage = new AppShell();
         }
