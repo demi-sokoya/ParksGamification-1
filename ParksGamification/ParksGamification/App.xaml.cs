@@ -10,7 +10,8 @@ namespace ParksGamification
         {
             InitializeComponent();
 
-            DependencyService.Register<ParkDataStoreLocalJson>();
+            //DependencyService.Register<ParkDataStoreLocalJson>();
+            DependencyService.Register<ParkDataStoreSQLite>();
 
             MainPage = new AppShell();
         }
